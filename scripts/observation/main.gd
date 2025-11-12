@@ -114,6 +114,7 @@ func handle_interaction(player:PlayerObserver, loc:Localization):
 			'eventId': loc.eventId,
 			'band': player.current_band(),
 			'time': Time.get_unix_time_from_system()
+
 		}
 		player.controlling_player.add_observation(newObservation)
 	else:

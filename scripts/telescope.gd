@@ -18,7 +18,11 @@ enum physical_location {
 @export var observation_delay: int
 ## Start and end of observable range in nanometers
 @export var bands: Array[Global.OBSERVATION_BAND]
+## Use image_left, image_center and image_right instead, maybe, we can rotate things
 @export var image: Texture2D
+@export var image_left: Texture2D
+@export var image_center: Texture2D
+@export var image_right: Texture2D
 @export var type: String
 
 func get_location_string():
