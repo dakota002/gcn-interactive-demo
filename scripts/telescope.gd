@@ -5,13 +5,20 @@ enum physical_location {
 	SPACE
 }
 
+enum footprint {
+	RECTANGLE,
+	CIRCLE,
+	OTHER
+}
+
 # Basic Properties (Non-gameplay affecting)
 @export var telescope_name: String
 @export var position: physical_location
 
 # Telescope Stats (Gameplay affecting)
-## Degrees squared
+## Arc sec squared
 @export var field_of_view: float # Corresponds to players' respective target areas
+@export var view_area: footprint
 @export var sensitivity: int
 ## Degrees per second
 @export var slew_speed: float

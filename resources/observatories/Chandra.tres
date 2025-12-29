@@ -9,11 +9,11 @@
 script = ExtResource("1_kqrfe")
 telescope_name = "Chandra"
 position = 1
-field_of_view = 0.0
+field_of_view = 0.5
 sensitivity = 0
 slew_speed = 0.0
 observation_delay = 0
-bands = Array[int]([])
+bands = Array[int]([6])
 image = ExtResource("1_w0w60")
 image_left = ExtResource("2_1kpdr")
 image_center = ExtResource("1_w0w60")
