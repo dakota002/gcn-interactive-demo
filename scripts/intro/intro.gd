@@ -5,8 +5,11 @@ extends Control
 func _process(delta):
 	logo.rotation += 0.05 * delta
 
-func _input(event):
-	if event.is_pressed():
+func _input(_event):
+	if (Input.is_action_just_pressed("p1_primary") ||
+		Input.is_action_just_pressed("p2_primary") ||
+		Input.is_action_just_pressed("p3_primary") ||
+		Input.is_action_just_pressed("p4_primary")):
 		_end_intro()
 
 func _end_intro():

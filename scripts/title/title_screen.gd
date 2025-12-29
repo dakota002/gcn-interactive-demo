@@ -5,8 +5,11 @@ extends Control
 func _ready():
 	set_process_input(true)
 
-func _input(event):
-	if event.is_pressed():
+func _input(_event):
+	if (Input.is_action_just_pressed("p1_primary") ||
+		Input.is_action_just_pressed("p2_primary") ||
+		Input.is_action_just_pressed("p3_primary") ||
+		Input.is_action_just_pressed("p4_primary")):
 		_start_game()
 
 func _start_game():

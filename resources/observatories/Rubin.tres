@@ -7,6 +7,7 @@ script = ExtResource("1_antlb")
 telescope_name = "Rubin"
 position = 0
 field_of_view = 9.6
+view_area = 0
 sensitivity = 0
 slew_speed = 0.7
 observation_delay = 0

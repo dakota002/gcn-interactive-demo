@@ -7,6 +7,7 @@ script = ExtResource("1_7d0gy")
 telescope_name = "DECAM"
 position = 0
 field_of_view = 3.0
+view_area = 0
 sensitivity = 0
 slew_speed = 0.0
 observation_delay = 0

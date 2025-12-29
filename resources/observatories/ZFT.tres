@@ -7,6 +7,7 @@ script = ExtResource("1_lgu1u")
 telescope_name = "ZTF"
 position = 0
 field_of_view = 47.0
+view_area = 0
 sensitivity = 0
 slew_speed = 0.7
 observation_delay = 0
