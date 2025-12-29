@@ -1,9 +1,66 @@
-[gd_scene load_steps=4 format=3 uid="uid://duvh77weda0w"]
+[gd_scene load_steps=15 format=3 uid="uid://duvh77weda0w"]
 
 [ext_resource type="Script" uid="uid://b2e2yvs8wegth" path="res://scripts/title/title_screen.gd" id="1_05wk3"]
+[ext_resource type="Shader" uid="uid://ba6xcygwib32b" path="res://shaders/transparent_circle.gdshader" id="2_ynr0n"]
+[ext_resource type="Texture2D" uid="uid://bab5550gtwpp8" path="res://art/logo/GCN_Logo_v15_layer10.png" id="3_84bpe"]
+[ext_resource type="Texture2D" uid="uid://bmmtiowq47khy" path="res://art/logo/GCN_Logo_v15_layer01.png" id="4_iy4b5"]
+[ext_resource type="Shader" uid="uid://ba5e4ew5iunw" path="res://shaders/logo_pulse.gdshader" id="5_o70nc"]
+[ext_resource type="Texture2D" uid="uid://dssu4xivehkb2" path="res://art/logo/GCN_Logo_v15_layer09.png" id="6_1h35s"]
+[ext_resource type="Texture2D" uid="uid://p7l5ytrxessm" path="res://art/logo/GCN_Logo_v15_layer03.png" id="7_iy4b5"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_1s85s"]
 font_size = 100
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_iowo3"]
+shader = ExtResource("2_ynr0n")
+shader_parameter/resolution = Vector2(1920, 1080)
+
+[sub_resource type="Animation" id="Animation_7lh0t"]
+resource_name = "Logo"
+length = 30.0
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/GcnLogoV15Layer01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 30),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 6.28319]
+}
+
+[sub_resource type="Animation" id="Animation_7mtuq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect/GcnLogoV15Layer01:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_cbsym"]
+_data = {
+&"Logo": SubResource("Animation_7lh0t"),
+&"RESET": SubResource("Animation_7mtuq")
+}
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_84bpe"]
+shader = ExtResource("5_o70nc")
+shader_parameter/resolution = Vector2(1080, 1080)
+shader_parameter/color = Color(0.1, 0.4, 0.7, 1)
+shader_parameter/zoom = 2.0
+shader_parameter/speed = 2.0
+shader_parameter/contrast = 20.0
+shader_parameter/alpha_threshold = 0.5
 
 [sub_resource type="LabelSettings" id="LabelSettings_v6p8y"]
 font_size = 75
@@ -32,6 +89,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 13
 anchor_left = 0.5
@@ -50,11 +108,59 @@ label_settings = SubResource("LabelSettings_1s85s")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="StartInstructions" type="Label" parent="VBoxContainer"]
-layout_mode = 2
-text = "
+[node name="ColorRect" type="ColorRect" parent="."]
+material = SubResource("ShaderMaterial_iowo3")
+layout_mode = 0
+offset_right = 1920.0
+offset_bottom = 1080.0
+color = Color(0, 0, 0, 1)
 
-Press any button to Start"
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -540.0
+offset_top = -540.0
+offset_right = 540.0
+offset_bottom = 540.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_84bpe")
+expand_mode = 1
+
+[node name="GcnLogoV15Layer01" type="Sprite2D" parent="TextureRect"]
+position = Vector2(540, 540)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("4_iy4b5")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_cbsym")
+}
+autoplay = "Logo"
+
+[node name="GcnLogoV15Layer09" type="Sprite2D" parent="."]
+material = SubResource("ShaderMaterial_84bpe")
+position = Vector2(962, 540)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("6_1h35s")
+
+[node name="GcnLogoV15Layer03" type="Sprite2D" parent="."]
+position = Vector2(960, 540)
+scale = Vector2(0.525, 0.525)
+texture = ExtResource("7_iy4b5")
+
+[node name="StartInstructions" type="Label" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 242.0
+offset_top = 488.0
+offset_right = 1678.0
+offset_bottom = 591.0
+text = "Press any button to Start"
 label_settings = SubResource("LabelSettings_v6p8y")
 horizontal_alignment = 1
 vertical_alignment = 1

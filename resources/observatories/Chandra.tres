@@ -1,15 +1,22 @@
-[gd_resource type="Resource" script_class="Telescope" load_steps=2 format=3 uid="uid://c5wiylk376wiu"]
+[gd_resource type="Resource" script_class="Telescope" load_steps=5 format=3 uid="uid://c5wiylk376wiu"]
 
 [ext_resource type="Script" uid="uid://b70rxpxqa6sko" path="res://scripts/telescope.gd" id="1_kqrfe"]
+[ext_resource type="Texture2D" uid="uid://ovfjduw1b8xa" path="res://art/telescopes/chandra/Chandra-center.svg" id="1_w0w60"]
+[ext_resource type="Texture2D" uid="uid://c4jofvbkg03uo" path="res://art/telescopes/chandra/Chandra-left.svg" id="2_1kpdr"]
+[ext_resource type="Texture2D" uid="uid://ciqj7xp8f2opn" path="res://art/telescopes/chandra/Chandra-right.svg" id="3_y78dv"]
 
 [resource]
 script = ExtResource("1_kqrfe")
 telescope_name = "Chandra"
 position = 1
-field_of_view = 0.0
+field_of_view = 0.5
 sensitivity = 0
 slew_speed = 0.0
 observation_delay = 0
-band = Array[int]([])
+bands = Array[int]([6])
+image = ExtResource("1_w0w60")
+image_left = ExtResource("2_1kpdr")
+image_center = ExtResource("1_w0w60")
+image_right = ExtResource("3_y78dv")
 type = ""
 metadata/_custom_type_script = "uid://b70rxpxqa6sko"
