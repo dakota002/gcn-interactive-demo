@@ -48,10 +48,14 @@ func _ready():
 
 func _process(delta: float) -> void:
 	var rotation_speed = SPEED * delta
+	for child in Events.get_children():
+		if child is Localization and child.SourceEvent == null:
+			child.queue_free()
 	Events.rotate(rotation_speed)
 	rotate_observing_players(rotation_speed)
 	ScoreLabel.text = "Score: " + str(score)
 	score = scores.values().reduce(sum, 0)
+
 
 
 func sum(accum, number):
@@ -97,7 +101,7 @@ func _on_player_exited(event:Node2D, playerObserver:PlayerObserver) -> void:
 
 
 func _on_player_observe(playerObserver:PlayerObserver):
-	for event in target_map[playerObserver.controlling_player.name].filter(func (x): return x is Localization):
+	for event in target_map[playerObserver.controlling_player.name].filter(func (x): return is_instance_valid(x) && x is Localization):
 		if event is Localization:
 			handle_interaction(playerObserver, event)
 
@@ -114,7 +118,6 @@ func handle_interaction(player:PlayerObserver, loc:Localization):
 			'eventId': loc.eventId,
 			'band': player.current_band(),
 			'time': Time.get_unix_time_from_system()
-
 		}
 		player.controlling_player.add_observation(newObservation)
 	else:
