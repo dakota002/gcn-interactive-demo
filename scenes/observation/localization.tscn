@@ -1,19 +1,19 @@
-[gd_scene load_steps=3 format=3 uid="uid://dc0exh5068ov6"]
+[gd_scene format=3 uid="uid://dc0exh5068ov6"]
 
 [ext_resource type="Script" uid="uid://bq71ks762jcx0" path="res://scripts/observation/localization.gd" id="1_evtbj"]
 [ext_resource type="PackedScene" uid="uid://cf8q2ceyjr4aa" path="res://scenes/event/event.tscn" id="3_qfcqe"]
 
-[node name="Localization" type="Node2D"]
+[node name="Localization" type="Node2D" unique_id=297135083]
 script = ExtResource("1_evtbj")
 LocalizationType = 1
 
-[node name="MaskArea" type="Area2D" parent="."]
+[node name="MaskArea" type="Area2D" parent="." unique_id=1284839997]
 collision_layer = 0
 collision_mask = 2
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MaskArea"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MaskArea" unique_id=1952690061]
 
-[node name="Event" parent="." instance=ExtResource("3_qfcqe")]
+[node name="Event" parent="." unique_id=1529850027 instance=ExtResource("3_qfcqe")]
 visible = false
 location = Vector2(408, 392)
 decay_rate = 1
