@@ -1,16 +1,14 @@
-[gd_resource type="Resource" script_class="Telescope" load_steps=2 format=3 uid="uid://hwwqgt24pvrb"]
+[gd_resource type="Resource" script_class="Telescope" format=3 uid="uid://hwwqgt24pvrb"]
 
 [ext_resource type="Script" uid="uid://b70rxpxqa6sko" path="res://scripts/telescope.gd" id="1_antlb"]
+[ext_resource type="Texture2D" uid="uid://ct4g1i4h8w7vr" path="res://art/gcn_patch.png" id="1_muo5c"]
 
 [resource]
 script = ExtResource("1_antlb")
 telescope_name = "Rubin"
-position = 0
 field_of_view = 9.6
-view_area = 0
-sensitivity = 0
 slew_speed = 0.7
-observation_delay = 0
 bands = Array[int]([5, 4, 3])
+image = ExtResource("1_muo5c")
 type = "8m class survey instrument"
 metadata/_custom_type_script = "uid://b70rxpxqa6sko"

@@ -1,4 +1,4 @@
-[gd_resource type="Resource" script_class="Telescope" load_steps=6 format=3 uid="uid://c26thotgx0phh"]
+[gd_resource type="Resource" script_class="Telescope" format=3 uid="uid://c26thotgx0phh"]
 
 [ext_resource type="Script" uid="uid://b70rxpxqa6sko" path="res://scripts/telescope.gd" id="1_1658n"]
 [ext_resource type="Texture2D" uid="uid://cl213n3f08en1" path="res://art/telescopes/fermi/Fermi-top.svg" id="1_cfh1e"]
@@ -9,15 +9,9 @@
 [resource]
 script = ExtResource("1_1658n")
 telescope_name = "Fermi GBM"
-position = 0
-field_of_view = 0.0
-sensitivity = 0
-slew_speed = 0.0
-observation_delay = 0
-bands = Array[int]([])
+bands = Array[int]([7])
 image = ExtResource("1_cfh1e")
 image_left = ExtResource("3_axfp6")
 image_center = ExtResource("2_6hg55")
 image_right = ExtResource("4_6c7xc")
-type = ""
 metadata/_custom_type_script = "uid://b70rxpxqa6sko"

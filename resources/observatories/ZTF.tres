@@ -1,0 +1,14 @@
+[gd_resource type="Resource" script_class="Telescope" format=3 uid="uid://cnm42vreubj54"]
+
+[ext_resource type="Texture2D" uid="uid://ct4g1i4h8w7vr" path="res://art/gcn_patch.png" id="1_ivoi7"]
+[ext_resource type="Script" uid="uid://b70rxpxqa6sko" path="res://scripts/telescope.gd" id="2_nbskx"]
+
+[resource]
+script = ExtResource("2_nbskx")
+telescope_name = "ZTF"
+field_of_view = 47.0
+slew_speed = 0.7
+bands = Array[int]([4])
+image = ExtResource("1_ivoi7")
+type = "1m class survey"
+metadata/_custom_type_script = "uid://b70rxpxqa6sko"

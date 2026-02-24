@@ -1,15 +1,11 @@
-[gd_resource type="Resource" script_class="Telescope" load_steps=2 format=3 uid="uid://b7vsw82rfy3to"]
+[gd_resource type="Resource" script_class="Telescope" format=3 uid="uid://b7vsw82rfy3to"]
 
 [ext_resource type="Script" uid="uid://b70rxpxqa6sko" path="res://scripts/telescope.gd" id="1_e3b5u"]
+[ext_resource type="Texture2D" uid="uid://ct4g1i4h8w7vr" path="res://art/gcn_patch.png" id="1_yp54y"]
 
 [resource]
 script = ExtResource("1_e3b5u")
 telescope_name = "Roman"
-position = 0
-field_of_view = 0.0
-sensitivity = 0
-slew_speed = 0.0
-observation_delay = 0
-band = Array[int]([])
-type = ""
+bands = Array[int]([2])
+image = ExtResource("1_yp54y")
 metadata/_custom_type_script = "uid://b70rxpxqa6sko"

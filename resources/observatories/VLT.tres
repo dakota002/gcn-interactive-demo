@@ -1,15 +1,11 @@
-[gd_resource type="Resource" script_class="Telescope" load_steps=2 format=3 uid="uid://dvcnlut6lt3ha"]
+[gd_resource type="Resource" script_class="Telescope" format=3 uid="uid://dvcnlut6lt3ha"]
 
+[ext_resource type="Texture2D" uid="uid://ct4g1i4h8w7vr" path="res://art/gcn_patch.png" id="1_tshs1"]
 [ext_resource type="Script" uid="uid://b70rxpxqa6sko" path="res://scripts/telescope.gd" id="1_w080r"]
 
 [resource]
 script = ExtResource("1_w080r")
 telescope_name = "VLT"
-position = 0
-field_of_view = 0.0
-sensitivity = 0
-slew_speed = 0.0
-observation_delay = 0
-band = Array[int]([])
-type = ""
+bands = Array[int]([4])
+image = ExtResource("1_tshs1")
 metadata/_custom_type_script = "uid://b70rxpxqa6sko"

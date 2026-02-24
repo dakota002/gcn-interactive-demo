@@ -1,16 +1,13 @@
-[gd_resource type="Resource" script_class="Telescope" load_steps=2 format=3 uid="uid://de8f4p35mvuqi"]
+[gd_resource type="Resource" script_class="Telescope" format=3 uid="uid://de8f4p35mvuqi"]
 
+[ext_resource type="Texture2D" uid="uid://ct4g1i4h8w7vr" path="res://art/gcn_patch.png" id="1_2h2jg"]
 [ext_resource type="Script" uid="uid://b70rxpxqa6sko" path="res://scripts/telescope.gd" id="1_7d0gy"]
 
 [resource]
 script = ExtResource("1_7d0gy")
 telescope_name = "DECAM"
-position = 0
 field_of_view = 3.0
-view_area = 0
-sensitivity = 0
-slew_speed = 0.0
-observation_delay = 0
 bands = Array[int]([4, 3])
+image = ExtResource("1_2h2jg")
 type = " 4m class survey"
 metadata/_custom_type_script = "uid://b70rxpxqa6sko"
