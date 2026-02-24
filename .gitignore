@@ -5,6 +5,8 @@
 builds
 *.tmp
 export_presets.cfg
+export.cfg
+export_credentials.cfg
 
 # VSCode specific ignores
 .vscode/
